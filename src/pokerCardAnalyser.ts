@@ -104,8 +104,15 @@ export const isSuite = (hand: Hand): [boolean, number] => {
 
 // fonction simple et detaillé pour determiner si une main est une Color : les 5 cartes sont de la même couleur
 export const isColor = (hand: Hand): [boolean, number] => {
-    return [true, 45];
+    const signs = hand.cards.map(card => card.sign);
+    for (const sign of signs) {
+        if (signs.filter(s => s === sign).length === 5) {
+            return [true, 45];
+        }
+    }
+    return [false, 0];
 }
+
 export default function pokerCardAnalyser(hands: Hand[]): Number {
     return 0;
 }
