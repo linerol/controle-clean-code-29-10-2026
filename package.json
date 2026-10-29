@@ -1,0 +1,27 @@
+{
+  "name": "controle-clean-code-29-10-2026",
+  "version": "1.0.0",
+  "description": "Contrôle Clean Code — TDD avec TypeScript et Vitest",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linerol/controle-clean-code-29-10-2026.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linerol/controle-clean-code-29-10-2026/issues"
+  },
+  "homepage": "https://github.com/linerol/controle-clean-code-29-10-2026#readme",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.12"
+  }
+}
