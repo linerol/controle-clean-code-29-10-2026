@@ -30,7 +30,7 @@ type Card = {
 }
 
 //objet main = { cards: Card[] }
-type Hand = {
+export type Hand = {
     cards: Card[];
 }
 
@@ -120,9 +120,28 @@ export const isQuinteFlush = (hand: Hand): [boolean, number] => {
 
 // fonction simple et detaillé pour determiner si une main est un carré : 4 cartes de la même valeur
 export const isCarre = (hand: Hand): [boolean, number] => {
-    return [true, 60];
+    const values = hand.cards.map(card => card.value);
+    for (const value of values) {
+        if (values.filter(v => v === value).length === 4) {
+            return [true, 60];
+        }
+    }
+    return [false, 0];
 }
 
+const handRankings = [isCarre, isColor, isSuite, isBrelan, isPair];
+
+// retourne la somme des points de toutes les mains, sans la quinte flush
 export default function pokerCardAnalyser(hands: Hand[]): Number {
-    return 0;
+    let total = 0;
+    for (const hand of hands) {
+        for (const isRanking of handRankings) {
+            const [matched, points] = isRanking(hand);
+            if (matched) {
+                total += points;
+                break;
+            }
+        }
+    }
+    return total;
 }
