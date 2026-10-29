@@ -55,6 +55,18 @@ export const handSuite: Hand = {
         { value: 14, sign: 1 },
     ],
 }
+
+// exemple de main color
+export const handColor: Hand = {
+    cards: [
+        { value: 10, sign: 1 },
+        { value: 11, sign: 1 },
+        { value: 12, sign: 1 },
+        { value: 13, sign: 1 },
+        { value: 14, sign: 1 },
+    ],
+}
+
 // fonction simple et detaillé pour determiner si une main est une paire
 export const isPair = (hand: Hand): [boolean, number] => {
     const values = hand.cards.map(card => card.value);
@@ -90,6 +102,10 @@ export const isSuite = (hand: Hand): [boolean, number] => {
     return [true, 40];
 }
 
+// fonction simple et detaillé pour determiner si une main est une Color : les 5 cartes sont de la même couleur
+export const isColor = (hand: Hand): [boolean, number] => {
+    return [true, 45];
+}
 export default function pokerCardAnalyser(hands: Hand[]): Number {
     return 0;
 }
