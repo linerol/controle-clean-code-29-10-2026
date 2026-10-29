@@ -79,6 +79,14 @@ export const isBrelan = (hand: Hand): [boolean, number] => {
 
 // fonction simple et detaillé pour determiner si une main est une Suite : les 5 valeurs sont consécutives
 export const isSuite = (hand: Hand): [boolean, number] => {
+    const values = hand.cards.map(card => card.value);
+    for (let i = 1; i < values.length; i++) {
+        const previous = values[i - 1];
+        const current = values[i];
+        if (previous === undefined || current !== previous + 1) {
+            return [false, 0];
+        }
+    }
     return [true, 40];
 }
 
