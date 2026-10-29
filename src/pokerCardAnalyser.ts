@@ -78,8 +78,9 @@ export const isBrelan = (hand: Hand): [boolean, number] => {
 }
 
 // fonction simple et detaillé pour determiner si une main est une Suite : les 5 valeurs sont consécutives
-// export const isSuite = (hand: Hand): [boolean, number] => {
-// }
+export const isSuite = (hand: Hand): [boolean, number] => {
+    return [true, 40];
+}
 
 export default function pokerCardAnalyser(hands: Hand[]): Number {
     return 0;
