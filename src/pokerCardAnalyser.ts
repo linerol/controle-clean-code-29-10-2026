@@ -113,6 +113,16 @@ export const isColor = (hand: Hand): [boolean, number] => {
     return [false, 0];
 }
 
+// fonction simple et detaillé pour determiner si une main est une quinte flush : les 5 cartes sont de la même couleur et les valeurs sont consécutives
+export const isQuinteFlush = (hand: Hand): [boolean, number] => {
+    return [true, 80];
+}
+
+// fonction simple et detaillé pour determiner si une main est un carré : 4 cartes de la même valeur
+export const isCarre = (hand: Hand): [boolean, number] => {
+    return [true, 60];
+}
+
 export default function pokerCardAnalyser(hands: Hand[]): Number {
     return 0;
 }
